@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do-Lists</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="box">
+        <h2>To Do Lists</h2>
+        <input type="text" placeholder="Write Here..." id="InputBx" />
+        <ul id="UL_lists"></ul>
+      </div>
+    </div>
+    <!-- Js -->
+    <script>
+      // Variables
+      // let InputBx = document.getElementById("InputBx");
+      // let UL = document.getElementById("UL_lists");
+
+      // InputBx.addEventListener("keyup", function (event) {
+      //   if (event.key == "Enter") {
+      //     addItem(this.value);
+      //     this.value = "";
+      //   }
+      // });
+
+      // function addItem(InputBx) {
+      //   let LI = document.createElement("li");
+      //   LI.innerHTML = `${InputBx}<i></i>`;
+
+      //   LI.addEventListener("click", function () {
+      //     this.classList.toggle("Done");
+      //   });
+
+      //   LI.querySelector("i").addEventListener("click", function () {
+      //     this.parentElement.remove();
+      //   });
+      //   // Append THIS
+      //   UL.appendChild(LI);
+      // }
+      // function saveData() {
+      //   localStorage.setItem("data1", List.innerHTML);
+      // }
+      // function getData() {
+      //   List.innerHTML = localStorage.getItem("data1");
+      // }
+      // getData();
+
+      // // variables
+      let Input = document.getElementById("InputBx");
+      let List = document.getElementById("UL_lists");
+
+      Input.addEventListener("keyup", function (event) {
+        if (event.key == "Enter") {
+          Input.click();
+        }
+      });
+
+      Input.addEventListener("click", function () {
+        if (Input.value == "") {
+          null;
+        } else {
+          let Li = document.createElement("li");
+          Li.innerHTML = Input.value;
+          Input.value = "";
+
+          List.appendChild(Li);
+          let iterate = document.createElement("I");
+          Li.appendChild(iterate);
+          saveData();
+        }
+      });
+
+      List.addEventListener(
+        "click",
+        (e) => {
+          if (e.target.tagName === "LI") {
+            e.target.classList.toggle("Done");
+            saveData();
+          } else if (e.target.tagName === "I") {
+            e.target.parentElement.remove();
+            saveData();
+          }
+        },
+        false
+      );
+      function saveData() {
+        localStorage.setItem("data1", List.innerHTML);
+      }
+      function getData() {
+        List.innerHTML = localStorage.getItem("data1");
+      }
+      getData();
+    </script>
+  </body>
+</html>

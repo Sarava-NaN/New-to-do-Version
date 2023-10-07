@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&family=Martian+Mono:wght@600;700&family=Poppins&family=Roboto+Mono:wght@400;600&display=swap");
+/* font-family: 'Lilita One', cursive;
+font-family: 'Martian Mono', monospace;
+font-family: 'Poppins', sans-serif;
+font-family: 'Roboto Mono', monospace; */
+/* color:#1f83f2;
+  color:#ff2c74;
+  color:#f00; */
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: 1s ease;
+}
+::-webkit-scrollbar-thumb {
+  background: #fff;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.5);
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #2f363e;
+  min-height: 100vh;
+}
+.box {
+  position: relative;
+  width: 450px;
+  height: 550px;
+  padding: 30px 50px;
+  border-radius: 30px;
+  background: #2f363e;
+  box-shadow: 25px 25px 75px rgba(0, 0, 0, 0.25),
+    10px 10px 70px rgba(0, 0, 0, 0.25), inset 5px 5px 10px rgba(0, 0, 0, 0.5),
+    inset 5px 5px 20px rgba(255, 255, 255, 0.2),
+    inset -5px -5px 15px rgba(0, 0, 0, 0.75);
+}
+.box h2 {
+  color: #fff;
+  font-family: "Martian Mono";
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 1.75rem;
+}
+.box #InputBx {
+  width: 100%;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 15px 20px;
+  font-family: "Poppins", sans-serif;
+  border: none;
+  outline: none;
+  text-transform: capitalize;
+  border-radius: 30px;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+}
+.box li {
+  position: relative;
+  list-style-type: none;
+  font-family: "Poppins";
+  background: #1f83f2;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 10px 46px;
+  margin: 15px 0;
+  border-radius: 22.5px;
+  color: #fff;
+  font-size: 1.5rem;
+  text-transform: capitalize;
+  min-height: 45px;
+  width: calc(100% - 40px);
+  cursor: pointer;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+  transition: 1s ease;
+}
+.box li.Done {
+  background: #f00;
+  transition: 1s ease;
+  font-family: "Lilita One", cursive;
+}
+.box li.Done::after {
+  content: "";
+  position: absolute;
+  left: 16px;
+  width: 12px;
+  height: 6px;
+  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  transform: rotate(315deg);
+}
+
+.box li i {
+  position: absolute;
+  right: -40px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ff2c74;
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.25),
+    inset 2px 2px 5px rgba(255, 255, 255, 0.25),
+    inset -3px -3px 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box li i::before {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(45deg);
+  border-radius: 10px;
+}
+.box li i::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 20px;
+  background: #fff;
+  transform: rotate(-45deg);
+  border-radius: 10px;
+}
+
+.box li::before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background: #2f363e;
+  left: 8px;
+  border-radius: 50%;
+}
+
+#UL_lists {
+  position: relative;
+  margin-top: 20px;
+  height: 350px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+@media screen and (max-width: 400px) {
+  body {
+    min-height: fit-content;
+  }
+  .box {
+    width: 450px;
+    max-width: fit-content;
+    height: 100vh;
+    padding: 10px 50px;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  .box h2 {
+    color: #fff;
+    font-family: "Martian Mono";
+    text-align: center;
+    margin-bottom: 1.2rem;
+    font-size: 1.55rem;
+  }
+  .box #InputBx {
+    font-size: 1.2rem;
+    border-radius: 12px;
+  }
+  .box li {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    min-height: 45px;
+    width: calc(100% - 40px);
+    transition: 1s ease;
+  }
+  .box li::before {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: #2f363e;
+    left: 9px;
+    border-radius: 50%;
+  }
+
+  #UL_lists {
+    position: relative;
+    margin-top: 20px;
+    height: 350px;
+    overflow-y: auto;
+    padding-right: 10px;
+  }
+}
