@@ -156,7 +156,7 @@ body {
   .box {
     width: 450px;
     max-width: fit-content;
-    height:90vh;
+    height:100vh;
     padding: 10px 50px;
     border-radius: 20px;
     overflow: hidden;
